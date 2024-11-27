@@ -6,13 +6,15 @@ export default function ApiDocumentation() {
     <div className="app-container">
       {/* Sidebar */}
       <nav className="sidebar">
-        <ul className="sub-nav-list">
+      <div className="sidebar-content">
+        <ul className=" nav-list">
           <br /><br /><br />
           <h2>Documentacion</h2>
         <li> <Link to="/documentacion/tipo-cambio">TIPO-CAMBIO</Link></li>
         <li><Link to="/documentacion/dni">consulta DNI</Link></li>
         <li><Link to="/documentacion/ruc">consulta RUC</Link></li>
         </ul>
+        </div>
       </nav>
       {/* Main Content */}
       <main className="main-content">

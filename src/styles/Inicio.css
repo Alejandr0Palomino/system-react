@@ -94,13 +94,13 @@
   }
 
   footer{
-    top: 902px;
-    left: 0px;
-    right: 0px;
+    top: 1150px;
     align-content: center;
     position: fixed;
-    background-color: #2f4655;
+    background-color: #14a1ff;
     color: #f8f8f8;
+    margin: auto;
+    padding: 2px 100px 2px 100px;
   }
   
   .footer p{

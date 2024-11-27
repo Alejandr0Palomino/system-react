@@ -6,7 +6,7 @@ export default function ApiDocumentation() {
       {/* Sidebar */}
       <nav className="sidebar">
         <div className="sidebar-content">
-          <div className="logo">DOCUMENTACIÓN</div>
+          <div className="logo">DOCUMENTACION</div>
           <ul className="nav-list">
             <li>INICIO</li>
             <li>PANEL</li>
@@ -14,12 +14,12 @@ export default function ApiDocumentation() {
             <li className="active">
               <div className="nav-item-with-dropdown">
                 <span>DOCUMENTACIÓN</span>
-                <span>▼</span>
+                <span>▼</span>  
               </div>
               <ul className="sub-nav-list">
                 <li>TIPO-CAMBIO</li>
-                <li>Consulta DNI</li>
-                <li>Consulta RUC</li>
+                <li>consulta DNI</li>
+                <li>consulta RUC</li>
               </ul>
             </li>
           </ul>
@@ -29,23 +29,12 @@ export default function ApiDocumentation() {
       {/* Main Content */}
       <main className="main-content">
         <br />
-        <h1>Consulta Tipo de Cambio</h1>
-        <p className="subtitle">Información sobre la consulta del tipo de cambio</p>
+        <h1>Consulta RUC</h1>
+        <p className="subtitle">Búsqueda por número de RUC</p>
 
         <section>
           <h2>Consideraciones</h2>
-          <ul>
-            <li>Este servicio utiliza datos actualizados de fuentes oficiales.</li>
-            <li>Se recomienda usar un token de autorización válido para realizar consultas.</li>
-            <li>El tipo de cambio está disponible para soles (PEN) a dólares (USD).</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Endpoint</h2>
-          <p>
-            <span className="method">GET</span> http://localhost:8080/api/tipocambio
-          </p>
+          <p>Los datos se obtienen del padrón reducido de SUNAT.</p>
         </section>
 
         <section>
@@ -62,13 +51,18 @@ export default function ApiDocumentation() {
               <tbody>
                 <tr>
                   <td>Accept</td>
-                  <td>String</td>
+                  <td>string</td>
+                  <td>application/json</td>
+                </tr>
+                <tr>
+                  <td>Content-Type</td>
+                  <td>string</td>
                   <td>application/json</td>
                 </tr>
                 <tr>
                   <td>Authorization</td>
-                  <td>String</td>
-                  <td>Bearer {"{token}"}</td>
+                  <td>string</td>
+                  <td>Bearer {'{token}'}</td>
                 </tr>
               </tbody>
             </table>
@@ -76,31 +70,21 @@ export default function ApiDocumentation() {
         </section>
 
         <section>
-          <h2>Parámetros</h2>
+          <h2>Body</h2>
           <div className="table-container">
             <table>
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Type</th>
+                  <th>name</th>
+                  <th>type</th>
                   <th>Description</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>moneda_origen</td>
-                  <td>String</td>
-                  <td>PEN</td>
-                </tr>
-                <tr>
-                  <td>moneda_destino</td>
-                  <td>String</td>
-                  <td>USD</td>
-                </tr>
-                <tr>
-                  <td>fecha</td>
-                  <td>String</td>
-                  <td>Fecha de consulta (formato yyyy-mm-dd)</td>
+                  <td>dni</td>
+                  <td>string</td>
+                  <td>11 dígitos</td>
                 </tr>
               </tbody>
             </table>
@@ -108,15 +92,22 @@ export default function ApiDocumentation() {
         </section>
 
         <section>
-          <h2>Respuesta 200</h2>
+          <h2>JSON</h2>
           <pre className="json-container">
-            {`{
-  "id": 1,
-  "fecha": "2024-09-05",
-  "compra": 3.793,
-  "venta": 3.797,
-  "paralelo": 3.74300000003
-}`}
+            {JSON.stringify({
+              "data": {
+                "direccion": "JR. ANDAHUAYLAS NRO. 100 INT. 201 URB. BARRIOS ALTOS",
+                "direccion_completa": "JR. ANDAHUAYLAS NRO. 100 INT. 201 URB. BARRIOS ALTOS - LIMA LIMA",
+                "ruc": "20000000000",
+                "nombre_o_razon_social": "EMPRESA DEMO",
+                "estado": "ACTIVO",
+                "condicion": "HABIDO",
+                "departamento": "LIMA",
+                "provincia": "LIMA",
+                "distrito": "MAGDALENA DEL MAR",
+                "ubigeo_sunat": "150101"
+              }
+            }, null, 2)}
           </pre>
         </section>
       </main>
