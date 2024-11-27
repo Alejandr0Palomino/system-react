@@ -1,5 +1,5 @@
 .app-container {
-  display: flex;
+  display: grid;
   min-height: 100vh;
 }
 .sidebar-content {
@@ -165,4 +165,14 @@ thead {
   border-radius: 0.375rem;
   overflow-x: auto;
   white-space: pre-wrap;
+}
+
+footer {
+  position: fixed;
+  background-color: aquamarine;
+  bottom: 0px;
+  width: auto;
+  padding: 0px 720px 0px 759px;
+  margin: 0px;
+  left: 0px;
 }

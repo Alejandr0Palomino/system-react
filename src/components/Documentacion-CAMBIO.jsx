@@ -1,6 +1,7 @@
 import "./../styles/Documentacion.css";
+import { Link } from "react-router-dom";
 
-export default function ApiDocumentation() {
+export default function ApiDocumentationCambio() {
   return (
     <div className="app-container">
       {/* Sidebar */}
@@ -8,18 +9,30 @@ export default function ApiDocumentation() {
         <div className="sidebar-content">
           <div className="logo">DOCUMENTACIÓN</div>
           <ul className="nav-list">
-            <li>INICIO</li>
-            <li>PANEL</li>
-            <li>TOKEN</li>
+            <li>
+              <Link to="/">INICIO</Link>
+            </li>
+            <li>
+              <Link to="/panel">otra pagina</Link>
+            </li>
+            <li>
+              <Link to="/token">otra pagina</Link>
+            </li>
             <li className="active">
               <div className="nav-item-with-dropdown">
                 <span>DOCUMENTACIÓN</span>
                 <span>▼</span>
               </div>
               <ul className="sub-nav-list">
-                <li>TIPO-CAMBIO</li>
-                <li>Consulta DNI</li>
-                <li>Consulta RUC</li>
+                <li>
+                  <Link to="/documentacion/tipo-cambio">Tipo-cambio</Link>
+                </li>
+                <li>
+                  <Link to="/documentacion/dni">Consulta DNI</Link>
+                </li>
+                <li>
+                  <Link to="/documentacion/ruc">Consulta RUC</Link>
+                </li>
               </ul>
             </li>
           </ul>
