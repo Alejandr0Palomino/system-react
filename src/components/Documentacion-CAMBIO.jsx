@@ -55,7 +55,7 @@ export default function ApiDocumentationCambio() {
         </section>
 
         <section>
-          <h2>Endpoint</h2>
+          <h2>EndpointS</h2>
           <p>
             <span className="method">GET</span> http://localhost:8080/api/tipocambio
           </p>
